@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<score:SContext xmlns:score="http://scoreabm.org/score" label="testwolf" ID="testwolf" pluralLabel="testwolfs">
+  <implementation package="testwolf" className="" basePath="../test_wolf" mode="AUTO"/>
+</score:SContext>
