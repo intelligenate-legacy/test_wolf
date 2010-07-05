@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<score:SContext xmlns:score="http://scoreabm.org/score" label="testwolf" ID="testwolf" pluralLabel="testwolfs">
-  <implementation package="testwolf" className="" basePath="../test_wolf" mode="AUTO"/>
+<score:SContext xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:score="http://scoreabm.org/score" label="testwolf" ID="testwolf" pluralLabel="testwolfs">
+  <attributes label="initial number of sheep" ID="initialnumberofsheep" pluralLabel="initial number of sheeps" sType="INTEGER" defaultValue="100"/>
+  <attributes label="initial number of wolves" ID="initialnumberofwolves" pluralLabel="initial number of wolvess" sType="INTEGER" defaultValue="50"/>
+  <attributes label="sheep gain from food" ID="sheepgainfromfood" pluralLabel="sheep gain from foods" sType="FLOAT" defaultValue="4.0"/>
+  <attributes label="wolf gain from food" ID="wolfgainfromfood" pluralLabel="wolf gain from foods" sType="FLOAT" defaultValue="20.0"/>
+  <attributes label="sheep reproduce" ID="sheepreproduce" pluralLabel="sheep reproduces" sType="FLOAT" defaultValue="4.0"/>
+  <attributes label="wolf reproduce" ID="wolfreproduce" pluralLabel="wolf reproduces" sType="FLOAT" defaultValue="5.0"/>
+  <attributes label="grass regrowth time" ID="grassregrowthtime" pluralLabel="grass regrowth times" sType="INTEGER" defaultValue="30"/>
+  <attributes label="run length" ID="runlength" pluralLabel="run lengths" sType="FLOAT" defaultValue="400.0"/>
+  <implementation package="testwolf" className="PPContextCreator" basePath="../test_wolf" mode="AUTO"/>
+  <agents label="Wolf" ID="wolf" pluralLabel="Wolves">
+    <implementation className="Wolf"/>
+  </agents>
+  <agents label="Sheep" ID="sheep" pluralLabel="Sheeps">
+    <implementation className="Sheep"/>
+  </agents>
+  <agents label="SimpleAgent" ID="simpleAgent" pluralLabel="SimpleAgents">
+    <implementation className="SimpleAgent"/>
+  </agents>
+  <agents label="Grass" ID="grass" pluralLabel="Grasss">
+    <implementation className="Grass"/>
+  </agents>
+  <projections xsi:type="score:SGrid" label="Simple Grid" ID="simpleGrid" pluralLabel="Simple Grids"/>
+  <projections xsi:type="score:SContinuousSpace" label="Continuous Space" ID="continuousSpace" pluralLabel="Continuous Spaces"/>
+  <valueLayers label="Grass Field" ID="grassField" pluralLabel="Grass Fields"/>
 </score:SContext>
